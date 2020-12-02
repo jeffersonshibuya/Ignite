@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { smallImage } from '../../util/resizingImage';
 import { CardShadow, Description, Detail, Info, Media, Platforms, Stats } from './styles';
 
 // import { Container } from './styles';
@@ -43,7 +44,7 @@ const GameDetail: React.FC = () => {
           </Description>
           <div className="gallery">
             {screen.results?.map((screen: {id: number, image: string}) => (
-              <img key={screen.id} src={screen.image} alt={screen.image}/>
+              <img key={screen.id} src={smallImage(screen.image, 1280)} alt={screen.image}/>
             ))}
           </div>
         </Detail>
