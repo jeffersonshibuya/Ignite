@@ -26,7 +26,9 @@ export const popup = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.75
+      duration: 0.75,
+      type: 'spring', 
+      stiffness: 150
     }
   },
   exit: {

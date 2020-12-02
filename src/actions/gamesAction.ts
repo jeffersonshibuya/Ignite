@@ -3,6 +3,10 @@ import { newGamesUrl, popularGamesUrl, searchGameUrl, upcomingGamesUrl } from '.
 
 
 export const loadGames = () => async (dispatch: any) =>{
+  dispatch({
+    type: 'LOADING_GAMES'
+  })
+
   const popularGamesData = await api.get(popularGamesUrl)
   const newGamesData = await api.get(newGamesUrl)
   const upcomingGamesData = await api.get(upcomingGamesUrl)
@@ -17,6 +21,10 @@ export const loadGames = () => async (dispatch: any) =>{
 }
 
 export const fetchSearch = (game_name: string) => async (dispatch: any) => {
+  dispatch({
+    type: 'LOADING_GAMES'
+  })
+  
   const searchedData = await api.get(searchGameUrl(game_name));
 
   dispatch({

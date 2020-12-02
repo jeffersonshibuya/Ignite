@@ -13,6 +13,7 @@ import starFull from '../../img/star-full.png';
 import steam from '../../img/steam.svg';
 import xbox from '../../img/xbox.svg';
 import { smallImage } from '../../util/resizingImage';
+import Loading from '../Loading';
 import { CardShadow, Description, Detail, Info, Media, Platforms, Stats } from './styles';
 
 
@@ -71,7 +72,7 @@ const GameDetail: React.FC<{pathId: string}> = ({pathId}) => {
 
   return (
     <>
-    {!isLoading && (
+    {isLoading? <Loading /> : (
       <CardShadow className="shadow" onClick={exitDetailHandler}>
         <Detail layoutId={pathId}>
           <Stats>

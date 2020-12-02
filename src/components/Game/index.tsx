@@ -9,6 +9,7 @@ import { StyledGame } from './styles';
 
 const Game: React.FC<any> = (game) => {
   const stringPathId = game.id.toString();
+  
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
     document.body.style.overflow = "hidden"
@@ -16,8 +17,9 @@ const Game: React.FC<any> = (game) => {
   }
   return (
     <StyledGame variants={popup} initial='hidden' animate='show' 
-      layoutId={stringPathId} onClick={loadDetailHandler}>
-      <Link to={`/game/${game.id}`}>
+      layoutId={stringPathId} onClick={loadDetailHandler} 
+      whileHover={{ scale: 1.1 }}>
+      <Link to={`/game/${game.id}`} >
         <motion.h3 layoutId={`title ${stringPathId}`}>{game.name}</motion.h3>
         <p>{game.released}</p>
         <motion.img layoutId={`image ${stringPathId}`} src={smallImage(game.background_image, 640)} alt={game.name}/>
