@@ -23,7 +23,7 @@ export const CardShadow = styled(motion.div)`
 export const Detail = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
-  padding: 2rem 20rem;
+  padding: 2rem 5rem;
   background: white;
   position: absolute;
   left: 10%;
@@ -31,4 +31,39 @@ export const Detail = styled(motion.div)`
   img {
     width: 100%;
   }
+`
+
+export const Stats = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const Info = styled(motion.div)`
+  text-align: center;
+`
+
+export const Platforms = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  img{
+    margin-left: 3rem;
+  }
+`
+
+export const Media = styled(motion.div)`
+  margin-top: 5rem;
+  img {
+    width: 100%;
+    /* height: 80vh;
+    object-fit: cover; */
+  }
+`
+
+export const Description = styled(motion.div)`
+  margin: 5rem 0rem;
+`
+
+export const Gallery = styled(motion.div)`
+  
 `

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { loadGames } from '../../actions/gamesAction';
 import Game from '../../components/Game';
 import GameDetail from '../../components/GameDetail';
@@ -15,6 +16,8 @@ interface RootState {
 }
 
 const GamesList: React.FC = () => {
+  const {pathname} = useLocation()
+  const pathId = pathname.split('/')[2]
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames())
@@ -23,7 +26,7 @@ const GamesList: React.FC = () => {
   const { popular, newGames, upcoming } = useSelector((state: RootState) => state.games)
   return (
     <GameListStyle>
-      <GameDetail />
+      {pathId && <GameDetail /> } 
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game:any) => (
